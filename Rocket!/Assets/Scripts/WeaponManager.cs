@@ -34,12 +34,10 @@ public class WeaponManager : MonoBehaviour {
             !EventSystem.current.IsPointerOverGameObject()) {
 
             if (currentWeapon.name == "LaserBlue") {
-                tempShot = Instantiate(currentWeapon.prefab, currentWeaponPosition.position, currentWeaponPosition.rotation, currentWeaponPosition);
-                Destroy(tempShot, Time.deltaTime);
-                if (!IsInvoking("GetNextWeaponPosition")) {
-                    Invoke("GetNextWeaponPosition", 2f);
-                }
-                
+                foreach (var curWeapPos in currentPlayerSkin.weaponPositions) {
+                    tempShot = Instantiate(currentWeapon.prefab, curWeapPos.position, curWeapPos.rotation, curWeapPos);
+                    Destroy(tempShot, Time.deltaTime);
+                }                
             } else {
                 tempShot = Instantiate(currentWeapon.prefab, currentWeaponPosition.position, currentWeaponPosition.rotation);
                 Destroy(tempShot, currentWeapon.destroyTime);

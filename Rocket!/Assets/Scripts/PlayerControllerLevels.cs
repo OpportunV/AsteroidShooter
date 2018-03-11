@@ -7,6 +7,7 @@ public class PlayerControllerLevels : MonoBehaviour {
     public ParticleSystem reactiveParticles, leftReactiveParticles, rightReactiveParticles;
     public AnimationCurve engineCurve;
     public Image healthBarImage;
+    public Text healthText;
     public float maxVelocityAxis = 4f;
     public int maxHealth = 200;
 
@@ -35,7 +36,7 @@ public class PlayerControllerLevels : MonoBehaviour {
             weaponManager.SetCurrentWeapon(PlayerPrefs.GetInt("currentWeapon"));
             currentHealth = PlayerPrefs.GetInt("currentHealth");
         }
-        healthBarImage.fillAmount = (float)currentHealth / maxHealth;
+        TakeDamage(0);
     }
 
     void FixedUpdate() {
@@ -134,8 +135,10 @@ public class PlayerControllerLevels : MonoBehaviour {
     }
 
     public void TakeDamage(int damage) {
-        currentHealth -= Mathf.Clamp(damage, 0, damage);
+        currentHealth -= Mathf.Max(damage, 0);
+        currentHealth = Mathf.Max(currentHealth, 0);
         healthBarImage.fillAmount = (float)currentHealth / maxHealth;
+        healthText.text = string.Format("{0} / {1}", currentHealth, maxHealth);
         if (currentHealth <= 0) {
             Destroy(gameObject);
         }

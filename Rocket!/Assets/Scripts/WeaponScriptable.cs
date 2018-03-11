@@ -4,12 +4,12 @@
 public class WeaponScriptable : ScriptableObject {
 
     public new string name;
-    public float startFireRate, fireRate, maxFireRate, duration, destroyTime;
+    public float startFireRate, fireRate, maxFireRate, destroyTime;
     public GameObject prefab;
     public Color color;
     public Sprite icon;
     public Sprite iconActive;
-    public int minDamage, maxDamage, opensAtLevel;
+    public int minDamage, maxDamage, startMinDamage, startMaxDamage, opensAtLevel;
 
     public int Damage {
         get {
@@ -22,7 +22,19 @@ public class WeaponScriptable : ScriptableObject {
         fireRate = Mathf.Min(maxFireRate, fireRate);
     }
 
+    public void ModifyDamage(int value) {
+        minDamage += value;
+        maxDamage += value;
+    }
+
+    public void ModifyDamage(float percentage) {
+        minDamage = (int)(minDamage + percentage * minDamage);
+        maxDamage = (int)(maxDamage + percentage * maxDamage);
+    }
+
     public void Refresh() {
         fireRate = startFireRate;
+        minDamage = startMinDamage;
+        maxDamage = startMaxDamage;
     }
 }

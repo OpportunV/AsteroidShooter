@@ -8,11 +8,13 @@ public class CameraController : MonoBehaviour {
 
     private Vector2 camLimitX, camLimitY, camSide;
     private LevelManager levelManager;
-    private float scroollWheelValue;
+    private float scroollWheelValue, inGamePanelHeight;
 
     void Start() {
         levelManager = LevelManager.instance;
         Camera.main.orthographicSize = Mathf.Clamp(PlayerPrefs.GetFloat("cameraSize"), scrollMin, scrollMax);
+        inGamePanelHeight = (Camera.main.ScreenToWorldPoint(new Vector3(0, 84, 0)) - 
+                             Camera.main.ScreenToWorldPoint(Vector3.zero)).y;
     }
 
     void LateUpdate() {
@@ -38,7 +40,7 @@ public class CameraController : MonoBehaviour {
             Camera.main.ScreenToWorldPoint(Vector3.zero);
 
         camLimitX = new Vector2(-levelManager.halfSideOfLevel + camSide.x / 2, levelManager.halfSideOfLevel - camSide.x / 2);
-        camLimitY = new Vector2(-levelManager.halfSideOfLevel + camSide.y / 2, levelManager.halfSideOfLevel - camSide.y / 2);
+        camLimitY = new Vector2(-levelManager.halfSideOfLevel + camSide.y / 2 - inGamePanelHeight, levelManager.halfSideOfLevel - camSide.y / 2);
 
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, camLimitX.x, camLimitX.y),

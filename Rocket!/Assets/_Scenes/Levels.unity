@@ -979,7 +979,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 279.3, y: 83.48}
+  m_SizeDelta: {x: 280, y: 84}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &288499929
 MonoBehaviour:
@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.75
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &757497744
@@ -4264,7 +4264,7 @@ Prefab:
     - target: {fileID: 114793308662357964, guid: 56e652918f342794db1abe8e4c5ecfd7,
         type: 2}
       propertyPath: currentWeaponIndex
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4703373612209172, guid: 56e652918f342794db1abe8e4c5ecfd7, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z

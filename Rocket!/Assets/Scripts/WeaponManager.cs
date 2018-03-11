@@ -25,6 +25,11 @@ public class WeaponManager : MonoBehaviour {
 
     void Start() {
         curLvl = LevelManager.instance.currentLevel;
+        if (curLvl == 0) {
+            foreach (var weap in weapons) {
+                weap.Refresh();
+            }
+        }
         SetCurrentWeapon(currentWeaponIndex);
         SetupPlayerSkin();
     }

@@ -15,7 +15,6 @@ MonoBehaviour:
   startFireRate: 0
   fireRate: 0
   maxFireRate: 0
-  duration: 30
   destroyTime: 2
   prefab: {fileID: 1352693950147102, guid: a477a9159e4ad3a49854ba8e16c84d50, type: 2}
   color: {r: 0, g: 0.42068958, b: 1, a: 0}
@@ -23,4 +22,6 @@ MonoBehaviour:
   iconActive: {fileID: 21300000, guid: 45a81ed3abbfa224e9eee3a743830cdf, type: 3}
   minDamage: 1
   maxDamage: 3
+  startMinDamage: 1
+  startMaxDamage: 3
   opensAtLevel: 2

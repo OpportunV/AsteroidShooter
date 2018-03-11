@@ -65,8 +65,16 @@ public class MissileAI : MonoBehaviour {
                 float dist = Vector3.Distance(transform.position, col.transform.position);
                 float dmg = (float)weaponManager.weapons[3].Damage / dist;
                 var ac = col.GetComponent<AsteroidControllerLevels>();
-                if (ac) {
+                if (ac != null) {
                     ac.OnHit((int)dmg);
+                }
+            }
+            if (col.tag == "Player") {
+                float dist = Vector3.Distance(transform.position, col.transform.position);
+                float dmg = (float)weaponManager.weapons[4].Damage / dist;
+                var pcl = col.GetComponentInParent<PlayerControllerLevels>();
+                if (pcl != null) {
+                    pcl.TakeDamage((int)dmg);
                 }
             }
         }

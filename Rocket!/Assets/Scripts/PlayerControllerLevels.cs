@@ -53,7 +53,7 @@ public class PlayerControllerLevels : MonoBehaviour {
         prevRotAmount = rotAmount;
 
 
-        if (Mathf.Abs(deltaRotAmount.z) < 0.1f * Mathf.Deg2Rad) {
+        if (Mathf.Abs(deltaRotAmount.z) < 0.05f * Mathf.Deg2Rad) {
             rightReactiveParticles.Stop();
             leftReactiveParticles.Stop();
         }
@@ -129,7 +129,7 @@ public class PlayerControllerLevels : MonoBehaviour {
     void OnCollisionEnter(Collision collision) {
         if (collision.collider.CompareTag("Enemy")) {
             float tempDamage = collision.impulse.magnitude * collision.relativeVelocity.sqrMagnitude * 0.5f;
-            tempDamage = Mathf.Max(30f, tempDamage);
+            tempDamage = Mathf.Max(Random.Range(21, 40), tempDamage);
             TakeDamage((int)tempDamage);
         }
     }

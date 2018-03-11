@@ -54,9 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 120184662940407544}
   maxDistance: 100
-  hitPrefabs:
-  - {fileID: 1585995007964736, guid: 769d0062ab8180b4b9cf964a422ee98e, type: 2}
-  - {fileID: 1221104683852130, guid: 1e12ae3df08426d42b4382fc5640bc7b, type: 2}
+  hitPrefab: {fileID: 1221104683852130, guid: 1e12ae3df08426d42b4382fc5640bc7b, type: 2}
 --- !u!120 &120184662940407544
 LineRenderer:
   m_ObjectHideFlags: 1

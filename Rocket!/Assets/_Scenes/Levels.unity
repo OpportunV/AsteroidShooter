@@ -4264,7 +4264,7 @@ Prefab:
     - target: {fileID: 114793308662357964, guid: 56e652918f342794db1abe8e4c5ecfd7,
         type: 2}
       propertyPath: currentWeaponIndex
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4703373612209172, guid: 56e652918f342794db1abe8e4c5ecfd7, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87e6341362f9bc4e93bee9b5a315c97, type: 3}
+  m_Name: ImpulseGreen
+  m_EditorClassIdentifier: 
+  name: ImpulseGreen
+  startFireRate: 4
+  fireRate: 4
+  maxFireRate: 20
+  duration: 30
+  destroyTime: 3
+  prefab: {fileID: 1485305050850138, guid: a4e65b674421e3345a894c421dcf8629, type: 2}
+  color: {r: 0, g: 0.7794118, b: 0.037626844, a: 1}
+  icon: {fileID: 21300000, guid: a6692d6fac7e0d141aca0a76867f8389, type: 3}
+  iconActive: {fileID: 21300000, guid: af762feb0defb8a4b8b3c047866a8d11, type: 3}
+  minDamage: 50
+  maxDamage: 60
+  opensAtLevel: 0

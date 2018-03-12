@@ -8,7 +8,7 @@ public class LaserController : MonoBehaviour {
     public float maxDistance;
     public GameObject hitPrefab;
 
-    private RaycastHit hit;
+    private RaycastHit hit, hitFixed;
     private Vector3 dir;
     private WeaponManager weaponManager;
     private GameObject temp;
@@ -26,15 +26,22 @@ public class LaserController : MonoBehaviour {
                 Destroy(hit.collider.gameObject);
             } else if (hit.collider.tag == "Enemy") {
                 SetUpLaser(hit.point, true);
-                AsteroidControllerLevels astCon = hit.collider.GetComponent<AsteroidControllerLevels>();
-                if (astCon != null) {
-                    astCon.OnHit(weaponManager.weapons[2].Damage);
-                }
             } else {
                 SetUpLaser(transform.position + dir * maxDistance, false);
             }
         } else {
             SetUpLaser(transform.position + dir * maxDistance, false);
+        }
+    }
+
+    void FixedUpdate() {
+        if (Physics.Raycast(transform.position, dir, out hit, maxDistance)) {
+            if (hit.collider.tag == "Enemy") {
+                AsteroidControllerLevels astCon = hit.collider.GetComponent<AsteroidControllerLevels>();
+                if (astCon != null) {
+                    astCon.OnHit(weaponManager.weapons[2].Damage);
+                }
+            }
         }
     }
 

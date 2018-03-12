@@ -20,8 +20,8 @@ MonoBehaviour:
   color: {r: 0, g: 0.42068958, b: 1, a: 0}
   icon: {fileID: 21300000, guid: df34a7dad3cfc654b83534602250b1a5, type: 3}
   iconActive: {fileID: 21300000, guid: 45a81ed3abbfa224e9eee3a743830cdf, type: 3}
-  minDamage: 1
-  maxDamage: 3
-  startMinDamage: 1
-  startMaxDamage: 3
+  minDamage: 0
+  maxDamage: 6
+  startMinDamage: 0
+  startMaxDamage: 6
   opensAtLevel: 2

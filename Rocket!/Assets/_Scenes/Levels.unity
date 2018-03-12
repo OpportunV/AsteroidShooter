@@ -3634,6 +3634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 7ff2349c1b6352e4086043ba742464d0, type: 2}
   resolutionDropdown: {fileID: 263516869}
+  fullscreenToggle: {fileID: 560107056}
 --- !u!114 &800944975
 MonoBehaviour:
   m_ObjectHideFlags: 0

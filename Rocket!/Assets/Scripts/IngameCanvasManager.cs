@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class IngameCanvasManager : MonoBehaviour {
 
-    public GameObject pauseMenu, gameOverMenu, inPortalMenu, howToPlayPanel;
+    public GameObject pauseMenu, settingsMenu, gameOverMenu, inPortalMenu, howToPlayPanel;
     public GameObject[] weaponButtons;
     public WeaponManager weaponManager;
     public Text levelDoneText;
@@ -23,6 +23,9 @@ public class IngameCanvasManager : MonoBehaviour {
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (levelManager.isPause) {
+                settingsMenu.SetActive(false);
+            }
             SetPause(pauseMenu.activeInHierarchy);
         }
     }
